@@ -1,5 +1,6 @@
 package com.vocab.trainer.Controller;
 
+import com.vocab.trainer.Service.TestService;
 import com.vocab.trainer.Service.VocabService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class VocabController {
     @Autowired
     private VocabService service;
+    @Autowired
+    private TestService testService;
 
     @PostMapping("/newVocab")
     public HttpStatus newVocab(@RequestParam String title){
