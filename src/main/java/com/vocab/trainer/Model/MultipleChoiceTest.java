@@ -1,10 +1,12 @@
 package com.vocab.trainer.Model;
 
+import lombok.Data;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 
 @Component
 @Getter
+@Data
 public class MultipleChoiceTest {
     private int correct;
     private String firstQuestion;

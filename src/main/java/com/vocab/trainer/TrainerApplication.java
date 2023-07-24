@@ -11,6 +11,8 @@ public class TrainerApplication {
 		return "sui";
 	}
 
+	@Bean
+	public int getInt(){return 1;}
 	public static void main(String[] args) {
 		SpringApplication.run(TrainerApplication.class, args);
 	}

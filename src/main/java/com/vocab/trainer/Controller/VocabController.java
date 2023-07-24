@@ -41,7 +41,4 @@ public class VocabController {
         }
         return HttpStatus.BAD_REQUEST;
     }
-
-
-
 }
