@@ -25,12 +25,16 @@ public class VocabController {
         }
         return HttpStatus.BAD_REQUEST;
     }
-    @DeleteMapping("/deleteVocab")
+    @PostMapping("/deleteVocab")
     public HttpStatus deleteVocab(@RequestParam String id){
         if (service.deleteVocabulary(id)) {
             return HttpStatus.OK;
         }
         return HttpStatus.BAD_REQUEST;
+    }
+    @PostMapping("/deleteVocabulary")
+    public void deleteVocabulary(@RequestParam String id,@RequestParam String key){
+        service.deleteVocabFromVocab(id, key);
     }
     @PostMapping("/addVocabToVocabulary")
     public HttpStatus addVocabToVocabulary(@RequestParam String id,
@@ -40,5 +44,12 @@ public class VocabController {
             return HttpStatus.OK;
         }
         return HttpStatus.BAD_REQUEST;
+    }
+    @PostMapping("/checkVocab")
+    public boolean checkVocab(@RequestParam String id,@RequestParam String key,@RequestParam int status){
+        if (service.check(id,key,status)) {
+            return true;
+        }
+        return false;
     }
 }

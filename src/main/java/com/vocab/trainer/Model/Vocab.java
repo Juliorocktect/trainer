@@ -10,10 +10,7 @@ import java.util.Map;
 
 @Component
 @Getter
-@Data
 public class Vocab{
-    @Id
-    private String id;
     private String primary;
     private String secondary;
 
